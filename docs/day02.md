@@ -112,3 +112,91 @@ React가 이 문제들을 어떻게 해결하는지 직접 체감함!
 - ⬜ 데이터베이스
 - ⬜ 디자인 시스템
 - ⬜ 사운드 디자인 (게임에서 이미 시작함!)
+
+
+
+## 추가 학습 (세션 3) - 배열 + map() 실전 활용
+
+### 9. 프로젝트 배열화
+**이전 (반복 코드):**
+```jsx
+<ProjectCard title="게임" description="..." link="..." />
+<ProjectCard title="포트폴리오" description="..." link="..." />
+```
+
+**이후 (배열 + map):**
+```jsx
+const projects = [
+  {
+    title: "SEOUL-2077 HANGUL BREACH",
+    description: "한글 타이핑 게임",
+    link: "https://cyberfunk-hangle.netlify.app/"
+  },
+  {
+    title: "포트폴리오 사이트",
+    description: "사이버펑크 테마 포트폴리오",
+    link: "https://rogan-portfolio.netlify.app/"
+  }
+];
+
+{projects.map((project, index) => (
+  <ProjectCard 
+    key={index}
+    title={project.title}
+    description={project.description}
+    link={project.link}
+  />
+))}
+```
+
+### 10. 실전 테스트: 프로젝트 추가
+배열에 새 항목 하나만 추가:
+```jsx
+{
+  title: "React 포트폴리오 (진행중)",
+  description: "지금 만들고 있는 이 사이트!",
+  link: "#"
+}
+```
+
+**결과**: JSX 코드 수정 없이 카드가 자동으로 3개로 늘어남!
+
+## 오늘의 가장 큰 깨달음
+
+데이터만 추가 → UI 자동 생성
+JSX 코드 수정 불필요!
+
+
+이것이 React의 핵심 철학이자 가장 강력한 이유
+
+## 오늘 전체 학습 로드맵 (Day 01-02)
+1. Node.js/Chocolatey 설치
+2. Create React App 프로젝트 생성
+3. Component 분리 (Header)
+4. useState로 카운터 만들기
+5. Props로 데이터 전달 (ProjectCard)
+6. map()으로 배열 렌더링 (skills)
+7. 조건부 렌더링 (count에 따른 메시지)
+8. useEffect로 페이지 제목 변경
+9. CSS 사이버펑크 테마 적용
+10. 프로젝트 배열화 (실전 활용)
+
+## 다음 세션 계획
+- React Router (여러 페이지 만들기)
+- 실제 포트폴리오 페이지 구조 설계
+- 게임/포트폴리오 프로젝트 데이터 연동
+- 반응형 디자인 (모바일 대응)
+
+## 목표 진행 상황 업데이트
+🎯 최종 목표: 올라운드 풀스택 개발자
+- ✅ 프론트엔드: HTML/CSS/JS
+- ✅ React: Component, State, Props, useEffect, map() 마스터
+- ✅ 디자인: 사이버펑크 테마 (게임 + 포트폴리오 + React)
+- ✅ 사운드: Web Audio API (게임에서 구현)
+- ⬜ 백엔드: 다음 단계
+- ⬜ 데이터베이스: 다음 단계
+
+## 오늘의 개발자 마인드
+"미루면 되나" - 즉시 실행하는 태도로 
+Chocolatey 설치부터 React 핵심 개념까지 
+막힘없이 진행한 알찬 하루였음
