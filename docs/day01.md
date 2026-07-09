@@ -39,3 +39,45 @@ git commit -m "react: 초기 Create React App 생성"
 ```
 
 ## 프로젝트 구조
+
+E:\Projects\cyberpunk-portfolio/
+├── src/
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   └── ...
+├── public/
+│   ├── index.html
+│   └── ...
+├── node_modules/
+├── package.json
+├── .gitignore
+└── README.md
+
+## 개발 환경
+- **Node.js**: v20.4.0
+- **npm**: v11.17.0
+- **React**: Create React App 기본 버전
+- **IDE**: VSCode + Git Bash/PowerShell
+
+## 막혔던 것
+- npm 명령어가 Git Bash PATH에 없음
+  → PowerShell 사용으로 해결
+
+- C:\WINDOWS\system32 폴더 권한 문제
+  → 새로 생성해서 해결
+
+- 폴더 복사 중 파일 누락
+  → 다시 생성해서 해결
+
+## 다음 할 것
+- React 핵심 개념 학습 (Components, JSX, Props, State)
+- Cyberpunk 포트폴리오 디자인 구현
+- 게임/다른 프로젝트 링크 추가
+- 포트폴리오 사이트로 배포
+
+## 개발자 팁
+1. **Chocolatey의 중요성**: Windows 개발자의 표준 도구
+2. **폴더 구조 설계**: 처음부터 체계적으로 관리
+3. **Git 초기화**: 프로젝트 시작 시 바로 버전 관리
+4. **미루지 않기**: 기록은 즉시! (오늘 배운 중요한 교훈)
