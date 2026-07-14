@@ -203,3 +203,25 @@ Footer (저작권 + 링크)
 - Netlify 배포 (실제로 공개하기)
 - 프로젝트 데이터 추가 (게임 외 다른 프로젝트 생기면)
 - 로딩 애니메이션 또는 페이지 전환 효과
+
+## 추가 학습 (세션 4) - 실제 배포
+
+### 14. Netlify 배포 (React 프로젝트)
+Build command: npm run build
+Publish directory: build
+
+### 15. React Router 404 버그 해결
+**문제**: `/about`에서 새로고침하면 404 에러
+
+**원인**: SPA는 페이지가 1개(index.html)뿐인데,
+Netlify 서버가 실제 `/about` 파일을 찾으려다 실패
+
+**해결**: `public/_redirects` 파일 생성
+/*    /index.html   200
+모든 요청을 index.html로 보내서 React Router가 처리하게 함
+
+## 최종 배포 URL
+https://cyberpunk-portfolio-react.netlify.app/
+
+## 오늘의 가장 큰 배움
+SPA 배포 시 필수인 리다이렉트 설정 - 실무에서도 자주 마주치는 이슈를 직접 해결함
