@@ -4,6 +4,7 @@ import Header from './Header';
 import Home from './Home';
 import About from './About';
 import Skills from './Skills';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
       </Routes>
+
+      <Footer />  {}
     </div>
   );
 }

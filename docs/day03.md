@@ -100,3 +100,55 @@ src/
 - ✅ React Router (다중 페이지, Link, useLocation)
 - ⬜ 스타일링 심화 (CSS Modules 또는 styled-components)
 - ⬜ 백엔드 연동
+
+## 추가 학습 (세션 2)
+
+### 8. About 페이지 실제 콘텐츠 작성
+- 자기소개 텍스트 추가
+- 연락처 정보 (Email, GitHub) 추가
+
+### 9. Footer 컴포넌트 추가
+```jsx
+function Footer() {
+  return (
+    <footer>
+      <p>© 2026 Rogan Kim. All rights reserved.</p>
+      <p>
+        <a href="https://github.com/rogan1000x">GitHub</a>
+        {' | '}
+        <a href="mailto:rogan1000x@gmail.com">Email</a>
+      </p>
+    </footer>
+  );
+}
+```
+
+**핵심 개념: Routes 안 vs 밖**
+```jsx
+<Header />           {/* 공통 요소: 항상 보임 */}
+<Routes>...</Routes> {/* 페이지별 요소: 바뀜 */}
+<Footer />           {/* 공통 요소: 항상 보임 */}
+```
+
+### 10. Navigation + Footer CSS 스타일링
+- 네비게이션 링크에 네온 글로우 효과
+- Footer 상단 구분선 추가
+- **hover 효과**: 마우스 올렸을 때 텍스트 글로우 강화
+
+```css
+nav a:hover {
+  text-shadow: 0 0 15px currentColor;
+}
+```
+
+## 완성된 페이지 구조
+Header (네비게이션 - 항상 표시)
+├── Home: 프로젝트 목록
+├── Skills: 기술 스택
+└── About: 자기소개 + 연락처
+Footer (저작권 + 링크 - 항상 표시)
+
+## 다음 할 것
+- 모바일 반응형 (미디어 쿼리)
+- 프로젝트 카드 CSS 개선 (게임 스타일처럼 hover 애니메이션)
+- 실제 배포 (Netlify)
