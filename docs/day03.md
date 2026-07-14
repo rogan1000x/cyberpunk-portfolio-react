@@ -152,3 +152,54 @@ Footer (저작권 + 링크 - 항상 표시)
 - 모바일 반응형 (미디어 쿼리)
 - 프로젝트 카드 CSS 개선 (게임 스타일처럼 hover 애니메이션)
 - 실제 배포 (Netlify)
+
+## 추가 학습 (세션 3) - 스타일링 마무리
+
+### 11. ProjectCard 스타일링
+- className 추가하여 CSS 적용
+- hover 시 위로 떠오르는 애니메이션 (`translateY`)
+- `target="_blank"` + `rel="noopener noreferrer"` 보안 설정
+
+### 12. 모바일 반응형 (미디어 쿼리)
+```css
+@media (max-width: 768px) {
+  h1 { font-size: 32px; }
+  .project-card { padding: 15px; }
+}
+```
+
+### 13. 버그 수정: 가로 스크롤바 문제
+**문제**: 화면에 불필요한 가로 스크롤바 생김
+
+**원인**: `box-sizing` 기본값(`content-box`)에서는
+padding이 너비에 추가로 더해져서 화면보다 요소가 커짐
+
+**해결**:
+```css
+* {
+  box-sizing: border-box;
+}
+```
+모든 요소의 padding/border를 지정한 너비 안에 포함시켜서 해결
+
+## 오늘 전체 학습 요약
+1. React Router 설치 및 설정
+2. BrowserRouter, Routes, Route, Link 사용법
+3. useLocation으로 현재 페이지 표시
+4. About 페이지 콘텐츠 작성
+5. Footer 컴포넌트 추가 (공통 요소는 Routes 밖에)
+6. 프로젝트 카드 hover 애니메이션
+7. 모바일 반응형 미디어 쿼리
+8. box-sizing 버그 해결
+
+## 완성된 사이트 구조
+Header (네비게이션)
+├── Home (프로젝트 카드)
+├── Skills (기술 스택)
+└── About (자기소개 + 연락처)
+Footer (저작권 + 링크)
+
+## 다음 할 것
+- Netlify 배포 (실제로 공개하기)
+- 프로젝트 데이터 추가 (게임 외 다른 프로젝트 생기면)
+- 로딩 애니메이션 또는 페이지 전환 효과
