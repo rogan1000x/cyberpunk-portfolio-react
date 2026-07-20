@@ -7,7 +7,8 @@ function Home() {
   const [editTitle, setEditTitle] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/projects')
+    //fetch('http://localhost:3001/api/projects')
+    fetch('https://cyberpunk-backend-5i57.onrender.com/api/projects')
       .then(response => response.json())
       .then(data => setProjects(data));
   }, []);
@@ -19,7 +20,7 @@ function Home() {
       link: "#"
     };
 
-    fetch('http://localhost:3001/api/projects', {
+    fetch('http://https://cyberpunk-backend-5i57.onrender.com/api/projects', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newProject)
@@ -32,7 +33,7 @@ function Home() {
     const isConfirmed = window.confirm('정말 이 프로젝트를 삭제하시겠습니까?');
 
     if (isConfirmed) {
-      fetch(`http://localhost:3001/api/projects/${index}`, {
+      fetch(`http://https://cyberpunk-backend-5i57.onrender.com/api/projects/${index}`, {
         method: 'DELETE'
       })
         .then(response => response.json())
@@ -51,7 +52,7 @@ function Home() {
       title: editTitle
     };
 
-    fetch(`http://localhost:3001/api/projects/${index}`, {
+    fetch(`http://https://cyberpunk-backend-5i57.onrender.com/api/projects/${index}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedProject)
