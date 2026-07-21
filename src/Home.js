@@ -7,7 +7,6 @@ function Home() {
   const [editTitle, setEditTitle] = useState('');
 
   useEffect(() => {
-    //fetch('http://localhost:3001/api/projects')
     fetch('https://cyberpunk-backend-5i57.onrender.com/api/projects')
       .then(response => response.json())
       .then(data => setProjects(data));
@@ -20,7 +19,7 @@ function Home() {
       link: "#"
     };
 
-    fetch('http://https://cyberpunk-backend-5i57.onrender.com/api/projects', {
+    fetch('https://cyberpunk-backend-5i57.onrender.com/api/projects', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newProject)
@@ -33,7 +32,7 @@ function Home() {
     const isConfirmed = window.confirm('정말 이 프로젝트를 삭제하시겠습니까?');
 
     if (isConfirmed) {
-      fetch(`http://https://cyberpunk-backend-5i57.onrender.com/api/projects/${index}`, {
+      fetch(`https://cyberpunk-backend-5i57.onrender.com/api/projects/${index}`, {
         method: 'DELETE'
       })
         .then(response => response.json())
@@ -52,7 +51,7 @@ function Home() {
       title: editTitle
     };
 
-    fetch(`http://https://cyberpunk-backend-5i57.onrender.com/api/projects/${index}`, {
+    fetch(`https://cyberpunk-backend-5i57.onrender.com/api/projects/${index}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedProject)
@@ -67,17 +66,17 @@ function Home() {
   return (
     <div>
       <h3>Projects</h3>
-      <button onClick={addTestProject}>테스트 프로젝트 추가</button>
+      <button className="add-btn" onClick={addTestProject}>+ 프로젝트 추가</button>
 
       {projects.map((project, index) => (
-        <div key={index}>
+        <div key={index} className="project-wrapper">
           {editingIndex === index ? (
-            <div>
+            <div className="edit-form">
               <input
                 value={editTitle}
                 onChange={(e) => setEditTitle(e.target.value)}
               />
-              <button onClick={() => saveEdit(index)}>저장</button>
+              <button className="save-btn" onClick={() => saveEdit(index)}>저장</button>
             </div>
           ) : (
             <div>
@@ -86,8 +85,10 @@ function Home() {
                 description={project.description}
                 link={project.link}
               />
-              <button onClick={() => startEditing(index, project.title)}>수정</button>
-              <button onClick={() => deleteProject(index)}>삭제</button>
+              <div className="card-actions">
+                <button className="edit-btn" onClick={() => startEditing(index, project.title)}>수정</button>
+                <button className="delete-btn" onClick={() => deleteProject(index)}>삭제</button>
+              </div>
             </div>
           )}
         </div>

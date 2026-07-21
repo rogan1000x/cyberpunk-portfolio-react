@@ -139,3 +139,76 @@ footer a:hover {
   }
 }
 
+
+.add-btn {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: #00ffff;
+  color: #00ffff;
+  margin-bottom: 20px;
+}
+
+.add-btn:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.project-wrapper {
+  margin-bottom: 20px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.edit-btn, .delete-btn {
+  font-size: 12px;
+  padding: 6px 16px;
+}
+
+.edit-btn {
+  border-color: #00ffff;
+  color: #00ffff;
+}
+
+.edit-btn:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.delete-btn {
+  border-color: #ff4444;
+  color: #ff4444;
+  box-shadow: 0 0 15px rgba(255, 68, 68, 0.3);
+}
+
+.delete-btn:hover {
+  background: rgba(255, 68, 68, 0.2);
+}
+
+.edit-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.edit-form input {
+  background: transparent;
+  border: 1px solid #ff2d9b;
+  color: #ff2d9b;
+  padding: 8px 12px;
+  font-family: 'Courier New', monospace;
+  outline: none;
+}
+
+.save-btn {
+  border-color: #00ff00;
+  color: #00ff00;
+}
+
+.save-btn:hover {
+  background: rgba(0, 255, 0, 0.2);
+}
